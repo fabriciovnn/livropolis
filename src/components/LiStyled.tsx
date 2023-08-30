@@ -8,6 +8,9 @@ const LiStyled = styled.li`
   margin-top: 10px;
   border-radius: 5px;
   background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export default LiStyled;

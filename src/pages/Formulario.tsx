@@ -1,6 +1,7 @@
 import { isFuture } from "date-fns";
 import { useState } from "react";
 import ButtonStyled from "../components/ButtonStyled";
+import InfosStyled from "../components/InfosStyled";
 import InputStyled from "../components/InputStyled";
 import LiStyled from "../components/LiStyled";
 import TextAreaStyled from "../components/TextAreaStyled";
@@ -143,49 +144,58 @@ function Formulario() {
         <ul>
           {livros.map((item, index) => (
             <LiStyled>
-              <strong>Título: </strong>{item.titulo} | <strong>Autor: </strong> {item.autor}
-              <ButtonStyled
-                modo="ver mais"
-                onClick={() => {
-                  alert(
-                    `Título: ${item.titulo}\nAutor: ${item.autor}\nDescrição: ${item.descricao} \nAno: ${item.ano} \nGênero: ${item.genero}\nId: ${item.id}`
-                  );
-                }}
-              >
-                ver mais
-              </ButtonStyled>
-              <ButtonStyled
-                modo="atualizar"
-                onClick={() => {
-                  console.log(`Atualizar livro de indice ${index}`);
-                  const novoNome = prompt("Informe o novo titulo: ");
-                  const novoTelefone = prompt("Informe o novo autor");
+              <InfosStyled>
+                <strong>Título: </strong>
+                {item.titulo} | <strong>Autor: </strong> {item.autor}
+              </InfosStyled>
+              <div>
+                <ButtonStyled
+                  modo="ver mais"
+                  onClick={() => {
+                    alert(
+                      `Título: ${item.titulo}\nAutor: ${item.autor}\nDescrição: ${item.descricao} \nAno: ${item.ano} \nGênero: ${item.genero}\nId: ${item.id}`
+                    );
+                  }}
+                >
+                  ver mais
+                </ButtonStyled>
+                <ButtonStyled
+                  modo="atualizar"
+                  onClick={() => {
+                    console.log(`Atualizar livro de índice ${index}`);
 
-                  const aux = [...livros];
-                  aux[index].titulo = novoNome ?? aux[index].titulo;
-                  aux[index].autor = novoTelefone ?? aux[index].autor;
+                    const novoNome = prompt("Informe o novo título:");
+                    const novoAutor = prompt("Informe o novo autor:");
 
-                  setLivros(aux);
-                }}
-              >
-                atualizar
-              </ButtonStyled>
-              <ButtonStyled
-                modo="excluir"
-                onClick={() => {
-                  const confirma = confirm(
-                    "Tem certeza que seja excluir o livro?"
-                  );
-
-                  if (confirma) {
                     const aux = [...livros];
-                    aux.splice(index, 1);
+                    aux[index] = {
+                      ...aux[index],
+                      titulo: novoNome || aux[index].titulo,
+                      autor: novoAutor || aux[index].autor,
+                    };
+
                     setLivros(aux);
-                  }
-                }}
-              >
-                excluir
-              </ButtonStyled>
+                  }}
+                >
+                  Atualizar
+                </ButtonStyled>
+                <ButtonStyled
+                  modo="excluir"
+                  onClick={() => {
+                    const confirma = confirm(
+                      "Tem certeza que seja excluir o livro?"
+                    );
+
+                    if (confirma) {
+                      const aux = [...livros];
+                      aux.splice(index, 1);
+                      setLivros(aux);
+                    }
+                  }}
+                >
+                  excluir
+                </ButtonStyled>
+              </div>
             </LiStyled>
           ))}
         </ul>

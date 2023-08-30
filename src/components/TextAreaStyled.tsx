@@ -5,12 +5,15 @@ const TextAreaStyled = styled.textarea`
   padding: 8px;
   border-radius: 5px;
   width: 100%;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid #313131;
   height: 90px;
   resize: none;
   background: transparent;
   font-size: 1.6rem;
+
+  &::placeholder {
+    color: #313131; /* Substitua pela cor desejada */
+  }
 `;
 
 export default TextAreaStyled;

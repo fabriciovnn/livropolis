@@ -5,6 +5,7 @@ import ButtonStyled from "../components/ButtonStyled";
 import InfosStyled from "../components/InfosStyled";
 import InputStyled from "../components/InputStyled";
 import LiStyled from "../components/LiStyled";
+import ModalStyled from "../components/ModalStyled";
 import TextAreaStyled from "../components/TextAreaStyled";
 import WrapperForm from "../components/WrapperForm";
 import FlexContainerStyled from "../shared/FlexContainerStyled";
@@ -91,6 +92,17 @@ function Formulario() {
 
   return (
     <FlexContainerStyled>
+      <ModalStyled ativo modo="atualizar">
+        <ul>
+          <LiStyled>Titulo</LiStyled>
+          <LiStyled>Autor</LiStyled>
+          <LiStyled>Ano</LiStyled>
+          <LiStyled>Genero</LiStyled>
+          <LiStyled>Descrição</LiStyled>
+          <LiStyled>Id</LiStyled>
+        </ul>
+      </ModalStyled>
+
       <WrapperForm>
         <h1>Livrópolis</h1>
         <span>Cadastre seu livro aqui!</span>

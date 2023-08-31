@@ -1,5 +1,6 @@
 import { isFuture } from "date-fns";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import ButtonStyled from "../components/ButtonStyled";
 import InfosStyled from "../components/InfosStyled";
 import InputStyled from "../components/InputStyled";
@@ -65,7 +66,7 @@ function Formulario() {
         genero: formulario.genero,
         descricao: formulario.descricao,
         autor: formulario.autor,
-        id: '123',
+        id: uuidv4(),
       },
     ]);
 

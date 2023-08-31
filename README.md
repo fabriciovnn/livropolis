@@ -1,27 +1,33 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Seu Desafio:
+Você foi contratado para desenvolver um aplicativo React que ajude Dona Clara a gerenciar sua coleção de livros mágicos. O aplicativo deve permitir que ela:
 
-Currently, two official plugins are available:
+Adicione novos livros à coleção.
+Edite informações de livros existentes.
+Exclua livros que não estão mais na biblioteca.
+Visualize todos os livros em sua coleção.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Requisitos:
+Adicionar Livro:
+Campos: Id, Título, Autor, Ano de Publicação, Data de cadastro, Gênero e uma breve Descrição.
+Todos os campos são obrigatórios.
+Deve haver uma validação para garantir que o ano de publicação não seja no futuro.
 
-## Expanding the ESLint configuration
+Editar Livro:
+Os mesmos campos que o formulário de adição. Não deve ser possível editar data de cadastro e o Id
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Excluir Livro:
+Deve haver uma confirmação antes de excluir um livro para garantir que Dona Clara não exclua um livro por engano.
 
-- Configure the top-level `parserOptions` property like this:
+Visualizar Livros:
+Deve haver uma lista ou grade mostrando todos os livros.
+Cada livro deve mostrar o Título, Autor e Ano de Publicação.
+Deve haver uma opção para ver mais detalhes, que mostrará todas as informações do livro.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Bônus:
+Estilização de Livropolis:
+Adicione estilos que reflitam a mágica e o encanto de Livropolis. Use cores suaves, fontes elegantes e ícones relacionados a livros.
+Considere usar bibliotecas como styled-components para estilização.
+Funcionalidade de Pesquisa:
+Implemente uma funcionalidade de pesquisa para ajudar Dona Clara a encontrar um livro específico por título ou autor.
